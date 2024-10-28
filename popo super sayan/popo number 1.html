@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+let popo = document.createElement('img');
+popo.src = 'литвин-vibe.gif';
+document.body.append(popo);
+let left = 100;
+let step = 100;
+
+popo.style.position = 'fixed';
+popo.style.top = '100px';
+popo.style.left = left +'px';
+function Popo(){
+    left = left + step;
+    if (left > 2000){
+        step = step *(-1);
+        popo.style.transform = 'rotateY(180deg)';
+    }
+    if (left < 0){
+        step = step *(-1);
+        popo.style.transform = 'rotateY(0)';
+    }
+    popo.style.left = left + 'px';
+}
+setInterval(Popo, 100);
+
+</script>
+</html>
